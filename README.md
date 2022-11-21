@@ -8,3 +8,8 @@
 <p>sau đó qua file chạy train_model để nó training và sinh ra file model ở trong folder rekognizer</p>
 <p>Cuối cùng chạy file test_file</p>
 <h3>Lưu ý khi chạy code nên tìm nguồn sáng tốt và có cam lap xịn thì dễ nhận diện hơn</h3>
+<h1>Chạy trên streamlit</h1>
+<p>Chạy từng step ghi trên app</p>
+<p>Step 1: Điền id và tên. Sau đó nhấn nhất nhận vô csv. Rồi nhấn start và chờ video 30s sau đó stop</p>
+<p>Step 2: Nhấn nút training. Thấy chữ running trên chạy xong r qua bước 3</p>
+<p>Step 3: Test</p>
