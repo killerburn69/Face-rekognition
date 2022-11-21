@@ -29,7 +29,7 @@ cap = cv2.VideoCapture(0)
 fontface= cv2.FONT_HERSHEY_SIMPLEX
 while(True):
     ret, frame = cap.read()
-    gray  = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(gray,scaleFactor=1.5, minNeighbors=5)
     for (x, y, w, h) in faces:
         cv2.rectangle(frame, (x, y), (x + w, y + h), (0,255, 0), 2)

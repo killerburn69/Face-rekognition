@@ -4,10 +4,11 @@ import sqlite3
 import csv
 import os
 import sys
+import streamlit as st
 # from PILL import Image
 header = ["ID","Name"]
 def writeToCSV(id,name):
-    f = open("people.csv","a+", newline="")
+    f = open("people.csv","a",newline='')
     writer = csv.writer(f)
     tup=[id,name]
     writer.writerow(tup)
@@ -44,10 +45,10 @@ while(True):
         if not os.path.exists('dataSet'):
             os.makedirs('dataSet')
         sampleNum +=1
-        cv2.imwrite('dataSet/User.' + str(id)+'.' + str(sampleNum) + '.jpg', gray[y:y+h,x:x+w])
+        cv2.imwrite('dataSet/'+str(name)+'.' + str(id)+'.' + str(sampleNum) + '.jpg', gray[y:y+h,x:x+w])
     cv2.imshow('frame',frame)
     cv2.waitKey(1) #& 0xFF == ord('q')):
-    if(sampleNum>=100):
+    if(sampleNum>=150):
             break
 cap.release()
 cv2.destroyAllWindows
