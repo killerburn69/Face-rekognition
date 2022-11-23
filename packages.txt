@@ -1,8 +1,8 @@
-streamlit1.14.1-dev
-streamlit-webrtc0.43.4-dev
-pandas1.5.1-dev
-pydeck0.8.0-dev
-opencv-contrib-python4.6.0.66-dev
-opencv-python4.6.0.66-dev
-numpy1.23.2-dev
-av9.2.0-dev
+streamlit-dev
+streamlit-webrtc-dev
+pandas-dev
+pydeck-dev
+opencv-contrib-python-dev
+opencv-python-dev
+numpy-dev
+av-dev
