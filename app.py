@@ -7,17 +7,12 @@ def intro():
 
 def mapping_demo():
     import streamlit as st
-    import pandas as pd
-    import pydeck as pdk
     import cv2
     import numpy as np
-    import sqlite3
     import csv
     import os
-    import sys
     import av
     from streamlit_webrtc import webrtc_streamer
-    from urllib.error import URLError
 
     header = ["ID","Name"]
     def writeToCSV(id,name):
@@ -86,10 +81,7 @@ def plotting_demo():
 
 def data_frame_demo():
     import cv2
-    import numpy as np
-    import os
     import csv
-    import sqlite3
     from streamlit_webrtc import webrtc_streamer
     import streamlit as st
     import av
