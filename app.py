@@ -45,7 +45,9 @@ def mapping_demo():
     # insertOrUpdate(id,name)
     if st.button('Click bỏ vô csv'):
         writeToCSV(id,name)
-    webrtc_streamer(key='key', video_processor_factory=VideoProcessor)
+    webrtc_streamer(key='key', video_processor_factory=VideoProcessor, rtc_configuration={  # Add this line
+        "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+    })
    
     # cv2.destroyAllWindows
 def plotting_demo():
@@ -121,7 +123,9 @@ def data_frame_demo():
             return av.VideoFrame.from_ndarray(frm,format='bgr24')
             
     st.write("Nhận diện khuôn mặt")
-    webrtc_streamer(key='key', video_processor_factory=VideoProcessor)
+    webrtc_streamer(key='key', video_processor_factory=VideoProcessor, rtc_configuration={  # Add this line
+        "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+    })
 
 page_names_to_funcs = {
     "Introduce": intro,
