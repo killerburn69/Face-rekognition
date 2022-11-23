@@ -48,26 +48,7 @@ def mapping_demo():
     webrtc_streamer(key='key', video_processor_factory=VideoProcessor, rtc_configuration={  # Add this line
         "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
     })
-    st.write('nếu như webcam trên streamlit dùng không được thì dùng camera sẵn trên desktop')
-    if st.button('nhấn vào để lấy data set'):
-        cap =cv2.VideoCapture(0)
-        sampleNum = 0
-        while(True):
-            ret,frame =cap.read()
-            gray= cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-            faces = face_cascade.detectMultiScale(gray, 1.3, 5)
-            for (x, y, w, h) in faces:
-                cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 0, 0), 2)
-                if not os.path.exists('dataSet'):
-                    os.makedirs('dataSet')
-                sampleNum +=1
-                cv2.imwrite('dataSet/'+str(name)+'.' + str(id)+'.' + str(sampleNum) + '.jpg', gray[y:y+h,x:x+w])
-            cv2.imshow('frame',frame)
-            cv2.waitKey(1) #& 0xFF == ord('q')):
-            if(sampleNum>=150):
-                    break
-        cap.release()
-        cv2.destroyAllWindows
+   
     # cv2.destroyAllWindows
 def plotting_demo():
     import cv2
@@ -145,33 +126,7 @@ def data_frame_demo():
     webrtc_streamer(key='key', video_processor_factory=VideoProcessor, rtc_configuration={  # Add this line
         "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
     })
-    st.write('nếu như webcam trên streamlit dùng không được thì dùng camera sẵn trên desktop')
-    if st.button('Nhấn vào đây để test'):
-        cap = cv2.VideoCapture(0)
-        while(True):
-            ret, frame = cap.read()
-            gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-            faces = face_cascade.detectMultiScale(gray,scaleFactor=1.5, minNeighbors=5)
-            for (x, y, w, h) in faces:
-                cv2.rectangle(frame, (x, y), (x + w, y + h), (0,255, 0), 2)
-                roi_gray =gray[y:y+h,x:x+w]
-                id, confidence = recognizer.predict(roi_gray)
-                if confidence < 40:
-                    # profile = getProfile(id)
-                    profile = getId(id)
-                    # print(profile)
-                    if(profile != None):
-                        cv2.putText(frame,""+profile[1], (x+10,y+h+30), fontface, 1,(0,255,0),2)
-                else:
-                    cv2.putText(frame,"Unknow",(x+10,y+h+30),fontface,1,(0,0,255),2)
-                    # cv2.imshow('Image',frame)
-                if (cv2.waitKey(1)) & 0xFF==ord('q'):
-                    break
-            cv2.imshow('frame',frame)
-            if cv2.waitKey(20) & 0xFF == ord('q'):
-                break
-        cap.release()
-        cv2.destroyAllWindows()
+
 page_names_to_funcs = {
     "Introduce": intro,
     "Step 1: Get data set": mapping_demo,
