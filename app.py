@@ -1,6 +1,4 @@
 import streamlit as st
-import cv2
-
 def intro():
     import streamlit as st
 
