@@ -1,8 +1,0 @@
-streamlit-dev
-streamlit-webrtc-dev
-pandas-dev
-pydeck-dev
-opencv-contrib-python-dev
-opencv-python-dev
-numpy-dev
-av-dev
