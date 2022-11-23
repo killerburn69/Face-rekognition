@@ -1,0 +1,8 @@
+streamlit
+streamlit-webrtc
+pandas
+pydeck
+opencv-contrib-python
+opencv-python
+numpy
+av
