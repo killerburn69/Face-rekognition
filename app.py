@@ -37,7 +37,7 @@ def mapping_demo():
                         os.makedirs('dataSet')
                     sampleNum +=1
                     cv2.imwrite('dataSet/'+str(name)+'.' + str(id)+'.' + str(sampleNum) + '.jpg', gray[y:y+h,x:x+w])
-                    if(sampleNum>=100):
+                    if(sampleNum>=150):
                         break
             return av.VideoFrame.from_ndarray(frm,format='bgr24')
     id = st.text_input("Id cần nhập")
