@@ -14,3 +14,4 @@
 <p>Step 1: Điền id và tên. Sau đó nhấn nhất nhận vô csv. Rồi nhấn start và chờ video 30s sau đó stop</p>
 <p>Step 2: Nhấn nút training. Thấy chữ running trên chạy xong r qua bước 3</p>
 <p>Step 3: Test</p>
+<h1>Lý do không chạy được trên deploy vì không truy cập camera trên deploy được và bị lỗi nên em chạy trên localhost</h1>
